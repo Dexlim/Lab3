@@ -6,57 +6,56 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
-            var ProdKons = new Laboratorium3();
+            var ProdKons = new Laboratorium3(10);
             ProdKons.Run();
         }
     }
 
     class Laboratorium3
     {
-        private static int rozmiarBufora = 10;
-        private static int zajetosc = 0;
-        private int[] bufor = new int[rozmiarBufora];
+        private int zajetosc = 0;
+        private int rozmiar;
+        private int[] bufor;
+
+        public Laboratorium3(int rozmiar)
+        {
+            this.zajetosc = 0;
+            this.rozmiar = rozmiar;
+            this.bufor = new int[rozmiar];
+        }
+
         public void Run()
         {
-
-
             Thread producent = new Thread(FunkcjaProducenta);
             Thread konsument = new Thread(FunkcjaKonsumenta);
 
             producent.Start();
-           // konsument.Start();
-
-            for (int i = 0; i < 10; i++)
-            {
-               // Console.WriteLine("Main: "+zajetosc); // Debug
-                zajetosc++;
-                Thread.Sleep(100);
-            }
+            konsument.Start();
 
             producent.Join();
+            konsument.Join();
 
         }
 
-        public static void FunkcjaProducenta()
+        public void FunkcjaProducenta()
         {
             while (true)
             {
                 if (zajetosc < 10)
                 {
-                    Console.WriteLine(zajetosc);
-                   // zajetosc++;
+
                 }
                 else
                 {
-                    return;
+
                 }
             }
         }
 
-        public static void FunkcjaKonsumenta()
+        public void FunkcjaKonsumenta()
         {
-            
+
         }
     }
- }
+}
 
