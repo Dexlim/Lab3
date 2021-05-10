@@ -3,7 +3,7 @@ namespace Lab3
 {
     class Producent : Watek
     {
-        public Producent(Dane pudelko) : base(pudelko)
+        public Producent(Dane daneBuforu) : base(daneBuforu)
         {
 
         }

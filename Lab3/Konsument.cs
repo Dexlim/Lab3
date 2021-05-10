@@ -3,7 +3,7 @@ namespace Lab3
 {
     class Konsument : Watek
     {
-        public Konsument(Dane pudelko) : base(pudelko)
+        public Konsument(Dane daneBuforu) : base(daneBuforu)
         {
 
         }
@@ -12,7 +12,6 @@ namespace Lab3
         {
             while (true)
             {
-                Console.WriteLine($"Konsument: {pudelko.zajetosc}");
             }
         }
     }

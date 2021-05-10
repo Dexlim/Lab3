@@ -4,11 +4,11 @@ namespace Lab3
     abstract class Watek
     {
         private Thread watek;
-        protected Dane pudelko;
-        public Watek(Dane pudelko)
+        protected Dane daneBuforu;
+        public Watek(Dane daneBuforu)
         {
             watek = new Thread(DzialanieWatku);
-            this.pudelko = pudelko;
+            this.daneBuforu = daneBuforu;
         }
         public void Start()
         {
