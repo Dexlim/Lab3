@@ -10,7 +10,7 @@ namespace Lab3
 
         protected override void DzialanieWatku()
         {
-            while(true)
+            while (true)
             {
                 Console.WriteLine($"Konsument: {pudelko.zajetosc}");
             }
