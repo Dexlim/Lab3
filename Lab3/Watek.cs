@@ -7,11 +7,13 @@ namespace Lab3
         private Thread watek;
         protected Dane daneBuforu;
         protected int id;
+        protected int opoznienie;
         public Watek(Dane daneBuforu,int id)
         {
             watek = new Thread(DzialanieWatku);
             this.daneBuforu = daneBuforu;
             this.id = id;
+            this.opoznienie = 0;
         }
         public void Start()
         {

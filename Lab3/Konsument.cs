@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Threading;
 namespace Lab3
 {
     class Konsument : Watek
     {
         public Konsument(Dane daneBuforu,int id) : base(daneBuforu,id)
         {
-
+            this.opoznienie = 0;
         }
 
         protected override void DzialanieWatku()
@@ -24,7 +25,9 @@ namespace Lab3
                 {
                 }
                 daneBuforu.sem.Release();
+                Thread.Sleep(opoznienie);
             }
+            
         }
     }
 }

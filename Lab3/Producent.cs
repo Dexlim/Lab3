@@ -7,8 +7,9 @@ namespace Lab3
     {
         public Producent(Dane daneBuforu,int id) : base(daneBuforu,id)
         {
-
+            this.opoznienie = 0;
         }
+
         protected override void DzialanieWatku()
         {
             Random rng = new Random();
@@ -25,6 +26,7 @@ namespace Lab3
                 {
                 }
                 daneBuforu.sem.Release();
+                Thread.Sleep(opoznienie);
             }
         }
     }
